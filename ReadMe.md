@@ -52,7 +52,8 @@ Les DataFrames finaux sont créés avec les bons types pour chaque colonne :
 ### Modèle
 Plusieurs modèles ont été implémentés afin de permettre d'atteindre l'objectif de prédire la note d'un film par un utilisateur. J'ai tout d'abord essayé de créer un modèle `SVD` (je n'ai pas conservé le code). Cependant, cela n'a pas été concluant en raison des résultats qui étaient très loin d'être convaincants.
 
-J'ai ensuite implémenté le modèle `Spark ALS`. Ce modèle a été retenu. J'ai réutilisé les différents exercices faits en cours (adaptés à notre situation) pour obtenir un résultat. J'ai donc joint tous les DataFrames ensemble pour fournir les données à Spark, puis, avec ALS, j'ai entraîné le modèle.
+J'ai ensuite implémenté le modèle `Spark ALS`. Ce modèle a été retenu. J'ai réutilisé les différents exercices faits en cours (adaptés à notre situation) pour obtenir un résultat. J'ai donc joint tous les DataFrames ensemble pour fournir les données à Spark, puis, avec ALS, j'ai entraîné le modèle.  
+De plus, j'ai essayer d'implémenter un modèle `NNE`, afin d'intégrer la dimension des caractéristiques des films et des utilisateurs. Vous le retrouver dans `./info/projet.ipynb`
 
 ### Metriques et Evaluations
 La métrique choisie est la **RMSE**.   
@@ -61,7 +62,7 @@ Après évaluation du modèle et calcul de la **RMSE**, nous obtenons sur notre 
 ### Algorithme de Recommandation
 Notre algorithme de recommandation (`Recommend_movies(user1_id, user2_id, nb_recommendations)`) est conçu de la manière suivante :
 - La fonction prend en entrée 2 `UserID` ainsi que le nombre de films que l'on veut recommander.
-- La fonction prédit la notation pour **chaque** film pour les deux utilisateurs (fonction `Evaluate_prediction(user_id)` qui retourne pour un utilisateur donné la liste des prédictions pour chaque film).
+- La fonction prédit la notation pour **chaque** film pour les deux utilisateurs (fonction `Evaluate_prediction(user_id)` (pour ALS) et  qui retourne pour un utilisateur donné la liste des prédictions pour chaque film).
 - Nous calculons la **moyenne des notes** pour chaque film entre les deux utilisateurs.
 - Les `nb_recommendations` avec la moyenne la plus haute sont alors retournées.
 
