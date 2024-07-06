@@ -1,4 +1,2 @@
 tensorflow
-implicit
 pyspark
-tabulate
