@@ -6,8 +6,8 @@ Auteur:
 ## Notes
 Le système de recommandation se situe dans le fichier `projet.ipynb`.
 Nous utilisons les datasets suivants:
-- `MovieLens-1M`:
-- `IMDb`:
+- **MovieLens-1M**:  [lien vers MovieLens](https://grouplens.org/datasets/movielens/)
+- **IMDb**: [lien vers IMDb Datasets](https://www.imdb.com/interfaces/)
     - title.basics.tsv
     - title.rankings.tsv
 
