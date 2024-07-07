@@ -72,6 +72,7 @@ Nous avons tout d'abord utilisé la fonction `model.recommendForAllUsers(num_rec
 Notre algorithme de recommandation (`get_Recommended_Movies(user1_id, user2_id, res_new)`) est conçu de la manière suivante :
 - La fonction prend en entrée 2 `UserID` ainsi que les films recommandés pour chaque user.
 - On récupère les recommandations des deux utilisateurs puis l'on sélectionne l'intersection des recommandations
+- Si il n'y a pas assez de film en commun (<=2), on ajoute des films recommandés de l'utilisateur1 et de l'utilsateur2 de façon a avoir au moins 5 films.
 - On retourne les noms des films recommandés
 
 ## Notes
