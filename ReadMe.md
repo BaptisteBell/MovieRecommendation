@@ -3,6 +3,14 @@
 Auteur:
 - Baptiste Bellamy
 
+## Notes
+Le système de recommandation se situe dans le fichier `projet.ipynb`.
+Nous utilisons les datasets suivants:
+- `MovieLens-1M`:
+- `IMDb`:
+    - title.basics.tsv
+    - title.rankings.tsv
+
 ## Contexte
 
 Ce projet vise à développer un système de recommandation de films utilisant l'ensemble de données MovieLens 1M et la base de données IMDb. Le système est conçu pour fournir des recommandations de films personnalisées.
@@ -60,14 +68,14 @@ La métrique choisie est la **RMSE**.
 Après évaluation du modèle et calcul de la **RMSE**, nous obtenons sur notre ensemble de données de test une RMSE égale à **0.88**. Nous voyons que le modèle est plutôt correct puisqu'elle est assez basse.
 
 ### Algorithme de Recommandation
-Notre algorithme de recommandation (`Recommend_movies(user1_id, user2_id, nb_recommendations)`) est conçu de la manière suivante :
-- La fonction prend en entrée 2 `UserID` ainsi que le nombre de films que l'on veut recommander.
-- La fonction prédit la notation pour **chaque** film pour les deux utilisateurs (fonction `Evaluate_prediction(user_id)` (pour ALS) et  qui retourne pour un utilisateur donné la liste des prédictions pour chaque film).
-- Nous calculons la **moyenne des notes** pour chaque film entre les deux utilisateurs.
-- Les `nb_recommendations` avec la moyenne la plus haute sont alors retournées.
+Nous avons tout d'abord utilisé la fonction `model.recommendForAllUsers(num_recommendations)` qui donne **num_recommendation** recommandation de film à chaque utilisateur. 
+Notre algorithme de recommandation (`get_Recommended_Movies(user1_id, user2_id, res_new)`) est conçu de la manière suivante :
+- La fonction prend en entrée 2 `UserID` ainsi que les films recommandés pour chaque user.
+- On récupère les recommandations des deux utilisateurs puis l'on sélectionne l'intersection des recommandations
+- On retourne les noms des films recommandés
 
 ## Notes
-Le point négatif de ALS est qu'il ne prend pas suffisamment en considération les informations de l'utilisateur et du film. Pour cette raison, j'ai essayé d'implémenter un modèle NNE (Neural Network Encoding). Cependant, les résultats étaient loin d'être convaincants. Vous pouvez retrouver mon code dans le fichier `./infos/Experiment.ipynb`.
+Le point négatif de ALS est qu'il ne prend pas suffisamment en considération les informations de l'utilisateur et du film. Pour cette raison, j'ai essayé d'implémenter un modèle NNE (Neural Network Encoding). Cependant, les résultats étaient loin d'être convaincants. Vous pouvez retrouver mon code dans le fichier `./infos/Experiment.ipynb`. Cependant, les résultats sont corrects et adapté au préférence des utilisateurs.
 
 ## Conclusion
 Le système de recommandation de films exploite avec succès des techniques de filtrage collaboratif pour fournir des recommandations de films personnalisées. L'utilisation de l'ensemble de données MovieLens 1M et de la base de données IMDb permet une vue complète des préférences de l'utilisateur et des attributs des films. Les améliorations futures pourraient inclure l’intégration d’un filtrage basé sur le contenu et d’approches hybrides (voir `info/Experiment.ipynb`) pour améliorer encore la qualité des recommandations.
