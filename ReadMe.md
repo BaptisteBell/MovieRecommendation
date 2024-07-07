@@ -3,13 +3,14 @@
 Auteur:
 - Baptiste Bellamy
 
-## Notes
-Le système de recommandation se situe dans le fichier `projet.ipynb`.
-Nous utilisons les datasets suivants:
-- **MovieLens-1M**:  [lien vers MovieLens](https://grouplens.org/datasets/movielens/)
-- **IMDb**: [lien vers IMDb Datasets](https://www.imdb.com/interfaces/)
+## DataSets
+Le système de recommandation se situe dans le fichier `projet.ipynb`. Nous utilisons les datasets suivants :
+- **MovieLens-1M** : [lien vers MovieLens](https://grouplens.org/datasets/movielens/)
+- **IMDb** : [lien vers IMDb Datasets](https://www.imdb.com/interfaces/)
     - title.basics.tsv
     - title.rankings.tsv
+
+Afin d'utiliser le système de recommandation, merci de télécharger les données puis de les mettre dans le dossier `data`. (Mettre title.basics.tsv et title.rankings.tsv dans un dossier nommé `IMDb`)
 
 ## Contexte
 
