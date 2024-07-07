@@ -1,4 +1,4 @@
-# Projet -- Systhème de Recommandation
+# Projet -- Système de Recommandation
 
 Auteur:
 - Baptiste Bellamy
