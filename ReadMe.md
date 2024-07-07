@@ -13,11 +13,11 @@ Nous utilisons les datasets suivants:
 
 ## Contexte
 
-Ce projet vise à développer un système de recommandation de films utilisant l'ensemble de données MovieLens 1M et la base de données IMDb. Le système est conçu pour fournir des recommandations de films personnalisées.
+Ce projet vise à développer un système de recommandation de films utilisant l'ensemble de données `MovieLens-1M `et la base de données `IMDb`. Le système est conçu pour fournir des recommandations de films personnalisées.
 
 ## Methodologie
 
-**1-Chargement et prétraitement des données :**  
+**Chargement et prétraitement des données :**  
 Chargement et prétraitement des données `MovieLens-1M` et `IMDb`.  
 Fusion des jeux de données afin d'obtenir un ensemble de données plus détaillé.
 
